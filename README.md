@@ -17,8 +17,8 @@ A simple user authentication system built in PHP that demonstrates user registra
 
 ## Prerequisites
 
-- PHP 8.2 or later
-- Turso v0.97.2 database - Using the Turso CLI & token (sqlite)
+- PHP 8.3 or later
+- Turso v0.2.4database - Using the Turso CLI & token (sqlite)
 - A web server (e.g., Apache or Nginx)
 
 ![image](https://github.com/user-attachments/assets/82012e42-27ef-494f-b726-89c77fccdff6)
