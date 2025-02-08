@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$dsn = 'sqlite:/tmp/turso.db';  
+$dsn = 'sqlite:libsql://authsystem-brainspill3r.turso.io';  
 
 $user = null;
 $pass = null;
