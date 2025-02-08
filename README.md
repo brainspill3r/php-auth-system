@@ -10,43 +10,100 @@ A simple user authentication system built in PHP that demonstrates user registra
 - **Logout:** End the session and securely log out the user.
 - **Turso Integration:** Uses a sqlite database to store user data with prepared statements to prevent SQL injection.
 
-![image](https://github.com/user-attachments/assets/aa685c13-417f-4ae6-a91b-e6989dd397da)
 
-![image](https://github.com/user-attachments/assets/0a5d2742-3e83-4284-bbd7-370837e6a92f)
+# PHP Authentication System with SQLite3
 
+This project is a simple authentication system using PHP and SQLite3.
 
-## Prerequisites
+## 📌 Prerequisites
+Ensure you have the following installed:
+- PHP 8.3+
+- SQLite3
+- Composer (optional for dependencies)
 
-- PHP 8.3 or later
-- Turso v0.2.4database - Using the Turso CLI & token (sqlite)
-- A web server (e.g., Apache or Nginx)
+## 🚀 Setup Instructions
 
-![image](https://github.com/user-attachments/assets/82012e42-27ef-494f-b726-89c77fccdff6)
+### 1️⃣ Install SQLite3 (if not installed)
 
-![image](https://github.com/user-attachments/assets/82608c1a-7004-42e2-83d5-8590594c5a76)
+#### **Ubuntu/Debian**
+```sh
+sudo apt update
+sudo apt install sqlite3 php8.3-sqlite3
+```
 
-![image](https://github.com/user-attachments/assets/6cd8a6c3-82c8-4675-be3b-41c12c9355f3)
+#### **Mac (Homebrew)**
+```sh
+brew install sqlite
+```
 
+#### **Windows**
+1. Download SQLite from [sqlite.org](https://www.sqlite.org/download.html)
+2. Extract and add it to your system `PATH`
 
-## Installation
+### 2️⃣ Create the SQLite Database
+Run the following commands:
+```sh
+touch database.db
+chmod 777 database.db
+```
 
-1. **Clone the Repository:**
+### 3️⃣ Create Users Table
+Open the SQLite shell:
+```sh
+sqlite3 database.db
+```
+Inside the SQLite shell, run:
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+.exit
+```
 
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/php-auth-system.git
-   cd php-auth-system
+### 4️⃣ Verify the Database Exists
+```sh
+ls -l database.db
+```
 
+### 5️⃣ Run PHP Server
+```sh
+php -S 0.0.0.0:8000
+```
 
-2. Connect to Turso database and authenticate
-    - Install Turso -  curl -sSfL https://get.tur.so/install.sh | bash
-    - Path by default is - /root/.turso/turso 
-        Use this command - export PATH="/root/.turso:$PATH"
-    - turso auth login --headless 
-    - turso config set token "JWT TOKEN HERE"
-    - turso db create authsystem
-    - turso db shell authsystem
+## 🔧 Configuration (config.php)
+Ensure your `config.php` correctly points to the SQLite database:
+```php
+<?php
+session_start();
 
-3. Run Server 
-    - php -S localhost:8000
-    - visit - http://localhost:8000 in browser 
-    
+// Define SQLite database path
+$databaseFile = __DIR__ . '/database.db';
+
+try {
+    // Create a new PDO connection for SQLite
+    $pdo = new PDO("sqlite:" . $databaseFile);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+?>
+```
+
+## 🏁 Testing the Connection
+Run:
+```sh
+php config.php
+```
+If no errors appear, the database connection is working!
+
+## ✅ Next Steps
+- Implement authentication (register & login)
+- Secure passwords using `password_hash()`
+- Add session handling
+- Improve error handling
+
+Happy coding! 🚀
+
