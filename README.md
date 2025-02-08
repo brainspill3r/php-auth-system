@@ -8,12 +8,11 @@ A simple user authentication system built in PHP that demonstrates user registra
 - **User Login:** Secure login using hashed passwords.
 - **Session Management:** Protect pages by verifying user sessions.
 - **Logout:** End the session and securely log out the user.
-- **Turso Integration:** Uses a sqlite database to store user data with prepared statements to prevent SQL injection.
 
-
-# PHP Authentication System with SQLite3
-
-This project is a simple authentication system using PHP and SQLite3.
+![image](https://github.com/user-attachments/assets/b67a0c8d-c5f8-42eb-9529-1ac83bfcfdf8)
+![image](https://github.com/user-attachments/assets/4ab7e478-9ad5-45e4-b1f1-95074abd27a2)
+![image](https://github.com/user-attachments/assets/0cdcb5fd-0b11-4e83-8c4c-4cc4108bd3ff)
+![image](https://github.com/user-attachments/assets/a832ae4b-5234-4822-a830-71d5d2990b4c)
 
 ## 📌 Prerequisites
 Ensure you have the following installed:
@@ -105,5 +104,4 @@ If no errors appear, the database connection is working!
 - Add session handling
 - Improve error handling
 
-Happy coding! 🚀
 
