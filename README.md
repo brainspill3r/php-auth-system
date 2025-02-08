@@ -1,6 +1,6 @@
 # PHP Auth System
 
-A simple user authentication system built in PHP that demonstrates user registration, login, and logout functionality. This project uses PDO for secure database interactions, PHP sessions for state management, and password hashing for security.
+A simple user authentication system built in PHP that demonstrates basic user registration, login, and logout functionality.
 
 ## Features
 
