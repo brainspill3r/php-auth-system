@@ -2,7 +2,7 @@
 
 # PHP Auth System
 
-A simple user authentication system built in PHP that demonstrates basic user registration, login, and logout functionality.
+A simple user authentication system built in PHP that demonstrates basic user registration, login, and logout functionality. With AAA unit testing. 
 
 ## Features
 
