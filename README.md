@@ -1,3 +1,5 @@
+![CI](https://github.com/brainspill3r/php-auth-system/actions/workflows/ci.yml/badge.svg)
+
 # PHP Auth System
 
 A simple user authentication system built in PHP that demonstrates basic user registration, login, and logout functionality.
