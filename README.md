@@ -99,7 +99,7 @@ php config.php
 If no errors appear, the database connection is working!
 
 
-✅ Unit Testing & AAA (Arrange-Act-Assert) Testing
+## ✅ Unit Testing & AAA (Arrange-Act-Assert) Testing
 
 This project follows the AAA (Arrange-Act-Assert) testing pattern for unit testing with PHPUnit.
 📌 What is AAA Testing?
@@ -108,7 +108,6 @@ This project follows the AAA (Arrange-Act-Assert) testing pattern for unit testi
 2️⃣ Act – Execute the function or action being tested.
 3️⃣ Assert – Verify the expected outcome.
 🛠 Example: User Registration Test
-
 
 🚀 Running Tests Locally
 📌 Install PHPUnit
@@ -127,8 +126,13 @@ composer require --dev phpunit/phpunit
 ./vendor/bin/phpunit tests/AuthTest.php --debug
 ```
 
+![php5](https://github.com/user-attachments/assets/bc24eba4-cdf3-4ab6-9356-581b8fae6222)
 
-🛠 GitHub Actions CI (Continuous Integration)
+
+![image](https://github.com/user-attachments/assets/fa4d2193-4f1b-4305-9ade-0fae8e6c4e19)
+
+
+## 🛠 GitHub Actions CI (Continuous Integration)
 
 This project uses GitHub Actions to automatically run tests.
 📌 CI Workflow Configuration (.github/workflows/ci.yml)
